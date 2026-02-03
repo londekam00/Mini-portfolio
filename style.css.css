@@ -1,0 +1,71 @@
+:root {
+    --bg: #1f2933;
+    --card: #111827;
+    --accent: #7dd3fc;
+    --text: #e5e7eb;
+}
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#020617, #020617);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 320px;
+    background: var(--card);
+    color: var(--text);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card: ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, var(--acent), transparent 60%)
+    capacity: 0.15;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    margin: 0 auto 1rem;
+}
+
+.role {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.bio {
+  font-size: 0.85rem;
+  margin: 1rem 0;
+  line-height: 1.4;
+}
+
+.mood {
+    font-size: 0.8rem;
+    capacity: 0.7;
+}
+
+/* Hover = mood shift */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.card:hover .mood {
+    content: "Current mood:chaotic";
+    color: #f472b6;
+}
